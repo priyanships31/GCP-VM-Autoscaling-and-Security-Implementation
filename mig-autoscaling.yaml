@@ -1,0 +1,88 @@
+autoscaler:
+  autoscalingPolicy:
+    coolDownPeriodSec: 60
+    cpuUtilization:
+      predictiveMethod: NONE
+      utilizationTarget: 0.6
+    maxNumReplicas: 10
+    minNumReplicas: 1
+    mode: ON
+  creationTimestamp: '2026-02-28T09:00:15.050-08:00'
+  id: '7469801845759582705'
+  kind: compute#autoscaler
+  name: gcp-web-mig
+  recommendedSize: 1
+  region: https://www.googleapis.com/compute/v1/projects/gcp-vm-autoscaling-security/regions/us-central1
+  selfLink: https://www.googleapis.com/compute/v1/projects/gcp-vm-autoscaling-security/regions/us-central1/autoscalers/gcp-web-mig
+  status: ACTIVE
+  target: https://www.googleapis.com/compute/v1/projects/gcp-vm-autoscaling-security/regions/us-central1/instanceGroupManagers/gcp-web-mig
+baseInstanceName: gcp-web-mig
+creationTimestamp: '2026-02-28T08:59:40.904-08:00'
+currentActions:
+  abandoning: 0
+  creating: 0
+  creatingWithoutRetries: 0
+  deleting: 0
+  none: 1
+  recreating: 0
+  refreshing: 0
+  restarting: 0
+  resuming: 0
+  starting: 0
+  stopping: 0
+  suspending: 0
+  verifying: 0
+description: ''
+distributionPolicy:
+  targetShape: BALANCED
+  zones:
+  - zone: https://www.googleapis.com/compute/v1/projects/gcp-vm-autoscaling-security/zones/us-central1-c
+  - zone: https://www.googleapis.com/compute/v1/projects/gcp-vm-autoscaling-security/zones/us-central1-f
+  - zone: https://www.googleapis.com/compute/v1/projects/gcp-vm-autoscaling-security/zones/us-central1-b
+fingerprint: AFAmJ659Dos=
+id: '7360225470418165779'
+instanceGroup: https://www.googleapis.com/compute/v1/projects/gcp-vm-autoscaling-security/regions/us-central1/instanceGroups/gcp-web-mig
+instanceLifecyclePolicy:
+  defaultActionOnFailure: REPAIR
+  forceUpdateOnRepair: YES
+  onFailedHealthCheck: DEFAULT_ACTION
+instanceTemplate: https://www.googleapis.com/compute/v1/projects/gcp-vm-autoscaling-security/regions/us-central1/instanceTemplates/compute-template-v1
+kind: compute#instanceGroupManager
+listManagedInstancesResults: PAGELESS
+name: gcp-web-mig
+region: https://www.googleapis.com/compute/v1/projects/gcp-vm-autoscaling-security/regions/us-central1
+satisfiesPzi: true
+satisfiesPzs: true
+selfLink: https://www.googleapis.com/compute/v1/projects/gcp-vm-autoscaling-security/regions/us-central1/instanceGroupManagers/gcp-web-mig
+standbyPolicy:
+  initialDelaySec: 0
+  mode: MANUAL
+status:
+  allInstancesConfig:
+    effective: true
+  autoscaler: https://www.googleapis.com/compute/v1/projects/gcp-vm-autoscaling-security/regions/us-central1/autoscalers/gcp-web-mig
+  isStable: true
+  stateful:
+    hasStatefulConfig: false
+    perInstanceConfigs:
+      allEffective: true
+  versionTarget:
+    isReached: true
+targetSize: 1
+targetStoppedSize: 0
+targetSuspendedSize: 0
+updatePolicy:
+  instanceRedistributionType: NONE
+  maxSurge:
+    calculated: 3
+    fixed: 3
+  maxUnavailable:
+    calculated: 3
+    fixed: 3
+  minimalAction: REPLACE
+  replacementMethod: SUBSTITUTE
+  type: OPPORTUNISTIC
+versions:
+- instanceTemplate: https://www.googleapis.com/compute/v1/projects/gcp-vm-autoscaling-security/regions/us-central1/instanceTemplates/compute-template-v1
+  targetSize:
+    calculated: 1

@@ -1,0 +1,27 @@
+bindings:
+- members:
+  - serviceAccount:restricted-sa@gcp-vm-autoscaling-security.iam.gserviceaccount.com
+  role: projects/gcp-vm-autoscaling-security/roles/ComputeViewerRestricted
+- members:
+  - serviceAccount:service-314339520865@gcp-sa-cloudasset.iam.gserviceaccount.com
+  role: roles/cloudasset.serviceAgent
+- members:
+  - user:g25ai1035@iitj.ac.in
+  role: roles/compute.admin
+- members:
+  - serviceAccount:314339520865@cloudservices.gserviceaccount.com
+  role: roles/compute.instanceGroupManagerServiceAgent
+- members:
+  - serviceAccount:service-314339520865@compute-system.iam.gserviceaccount.com
+  role: roles/compute.serviceAgent
+- members:
+  - user:g25ai1035@iitj.ac.in
+  role: roles/compute.viewer
+- members:
+  - serviceAccount:314339520865-compute@developer.gserviceaccount.com
+  role: roles/editor
+- members:
+  - user:g25ai1035@iitj.ac.in
+  role: roles/owner
+etag: BwZL8rvrhyo=
+version: 1
