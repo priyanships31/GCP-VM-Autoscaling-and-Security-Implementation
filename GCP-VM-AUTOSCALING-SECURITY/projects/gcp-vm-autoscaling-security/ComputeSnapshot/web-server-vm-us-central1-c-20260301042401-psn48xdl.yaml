@@ -1,0 +1,13 @@
+---
+apiVersion: compute.cnrm.cloud.google.com/v1beta1
+kind: ComputeSnapshot
+metadata:
+  annotations:
+    cnrm.cloud.google.com/project-id: gcp-vm-autoscaling-security
+  name: web-server-vm-us-central1-c-20260301042401-psn48xdl
+spec:
+  resourceID: web-server-vm-us-central1-c-20260301042401-psn48xdl
+  sourceDiskRef:
+    external: https://www.googleapis.com/compute/v1/projects/gcp-vm-autoscaling-security/zones/us-central1-c/disks/web-server-vm
+  storageLocations:
+  - us

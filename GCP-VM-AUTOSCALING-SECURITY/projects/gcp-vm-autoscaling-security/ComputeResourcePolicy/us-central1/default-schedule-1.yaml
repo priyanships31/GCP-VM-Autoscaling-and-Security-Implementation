@@ -1,0 +1,18 @@
+---
+apiVersion: compute.cnrm.cloud.google.com/v1beta1
+kind: ComputeResourcePolicy
+metadata:
+  annotations:
+    cnrm.cloud.google.com/project-id: gcp-vm-autoscaling-security
+  name: default-schedule-1
+spec:
+  region: us-central1
+  resourceID: default-schedule-1
+  snapshotSchedulePolicy:
+    retentionPolicy:
+      maxRetentionDays: 14
+      onSourceDiskDelete: KEEP_AUTO_SNAPSHOTS
+    schedule:
+      dailySchedule:
+        daysInCycle: 1
+        startTime: "04:00"

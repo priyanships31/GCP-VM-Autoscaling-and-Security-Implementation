@@ -1,0 +1,65 @@
+---
+apiVersion: compute.cnrm.cloud.google.com/v1beta1
+kind: ComputeInstance
+metadata:
+  annotations:
+    cnrm.cloud.google.com/project-id: gcp-vm-autoscaling-security
+  name: gcp-web-mig-g7mh
+spec:
+  bootDisk:
+    autoDelete: true
+    deviceName: compute-template-v1
+    initializeParams:
+      size: 10
+      sourceImageRef:
+        external: https://www.googleapis.com/compute/beta/projects/debian-cloud/global/images/debian-12-bookworm-v20260210
+      type: pd-balanced
+    mode: READ_WRITE
+    sourceDiskRef:
+      external: https://www.googleapis.com/compute/v1/projects/gcp-vm-autoscaling-security/zones/us-central1-c/disks/gcp-web-mig-g7mh
+  confidentialInstanceConfig:
+    enableConfidentialCompute: false
+  machineType: e2-medium
+  metadata:
+  - key: created-by
+    value: projects/314339520865/regions/us-central1/instanceGroupManagers/gcp-web-mig
+  - key: instance-template
+    value: projects/314339520865/regions/us-central1/instanceTemplates/compute-template-v1
+  networkInterface:
+  - accessConfig:
+    - natIpRef:
+        external: 136.115.86.15
+      networkTier: PREMIUM
+    name: nic0
+    networkIpRef:
+      external: 10.128.0.3
+    networkRef:
+      external: https://www.googleapis.com/compute/v1/projects/gcp-vm-autoscaling-security/global/networks/default
+    stackType: IPV4_ONLY
+    subnetworkProject: gcp-vm-autoscaling-security
+    subnetworkRef:
+      external: https://www.googleapis.com/compute/v1/projects/gcp-vm-autoscaling-security/regions/us-central1/subnetworks/default
+  reservationAffinity:
+    type: ANY_RESERVATION
+  resourceID: gcp-web-mig-g7mh
+  scheduling:
+    automaticRestart: true
+    onHostMaintenance: MIGRATE
+    provisioningModel: STANDARD
+  serviceAccount:
+    scopes:
+    - https://www.googleapis.com/auth/devstorage.read_only
+    - https://www.googleapis.com/auth/logging.write
+    - https://www.googleapis.com/auth/monitoring.write
+    - https://www.googleapis.com/auth/service.management.readonly
+    - https://www.googleapis.com/auth/servicecontrol
+    - https://www.googleapis.com/auth/trace.append
+    serviceAccountRef:
+      external: 314339520865-compute@developer.gserviceaccount.com
+  shieldedInstanceConfig:
+    enableIntegrityMonitoring: true
+    enableVtpm: true
+  tags:
+  - http-server
+  - ssh-access
+  zone: us-central1-c
