@@ -141,12 +141,7 @@ The file `deploy.sh` automates infrastructure creation using the gcloud CLI.
 - Autoscaling Policy
 - Firewall Rule (HTTP)
 
-### Usage
 
-bash
-gcloud config set project YOUR_PROJECT_ID
-gcloud services enable compute.googleapis.com
-bash deploy.sh
 
 
 
