@@ -194,21 +194,19 @@ The file `deploy.sh` automates infrastructure creation using the gcloud CLI.
               │      e2-medium              │
               │      Debian 12              │
               └─────────────────────────────┘
-
-
-   ┌──────────────────────────────────────────┐
-   │ Standalone VM                            │
-   │ Name: web-server-vm                      │
-   │ Machine: e2-medium                       │
-   │ OS: Debian 12                            │
-   └──────────────────────────────────────────┘
-
-
-   ┌──────────────────────────────────────────┐
-   │ IAM Configuration                        │
-   │ Custom Role: ComputeViewerRestricted     │
-   │ Permissions:                             │
-   │   - compute.instances.get                │
-   │   - compute.instances.list               │
-   │ Assigned to: restricted-sa               │
-   └──────────────────────────────────────────┘
+      ┌──────────────────────────────────────────┐
+      │ Standalone VM                            │
+      │ Name: web-server-vm                      │
+      │ Machine: e2-medium                       │
+      │ OS: Debian 12                            │
+      └──────────────────────────────────────────┘
+   
+   
+      ┌──────────────────────────────────────────┐
+      │ IAM Configuration                        │
+      │ Custom Role: ComputeViewerRestricted     │
+      │ Permissions:                             │
+      │   - compute.instances.get                │
+      │   - compute.instances.list               │
+      │ Assigned to: restricted-sa               │
+      └──────────────────────────────────────────┘
