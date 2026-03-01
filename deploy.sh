@@ -2,6 +2,7 @@
 
 PROJECT_ID="gcp-vm-autoscaling-security"
 REGION="us-central1"
+YOUR_IP="49.36.213.4/32"
 
 # Set project
 gcloud config set project $PROJECT_ID
@@ -29,6 +30,14 @@ gcloud compute instance-groups managed set-autoscaling gcp-web-mig \
     --target-cpu-utilization=0.6
 
 # Create Firewall Rule
+gcloud compute firewall-rules create allow-ssh-restricted \
+    --allow=tcp:22 \
+    --direction=INGRESS \
+    --priority=1000 \
+    --network=default \
+    --source-ranges=$YOUR_IP \
+    --target-tags=ssh-access
+
 gcloud compute firewall-rules create allow-http \
     --allow=tcp:80 \
     --direction=INGRESS \
